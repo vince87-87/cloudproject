@@ -74,3 +74,42 @@ sudo yum install htop -y
 sudo yum update -y
 
 ![image](https://user-images.githubusercontent.com/49937302/124697638-b93ea900-df19-11eb-8dcf-d0b9c9e2c2be.png)
+
+Create ami
+
+![image](https://user-images.githubusercontent.com/49937302/124698327-39b1d980-df1b-11eb-970e-385b6a2003aa.png)
+
+# Prepare Launch Template For Nginx (One Per Subnet)
+
+Assign backup ami, tag, nginix security group & configure user data
+
+#!/bin/bash
+
+sudo yum update -y
+
+sudo yum install nginx -y
+
+sudo systemctl start nginx
+
+sudo systemctl enable nginx
+
+![image](https://user-images.githubusercontent.com/49937302/124706191-74bb0980-df29-11eb-9f09-23a6d7579326.png)
+
+
+Launch NGINX from template from each zone
+
+![image](https://user-images.githubusercontent.com/49937302/124706107-5c4aef00-df29-11eb-828f-c13f88a1b5d3.png)
+
+![image](https://user-images.githubusercontent.com/49937302/124706032-3aea0300-df29-11eb-8b1b-d75c0d77b42b.png)
+
+# Configure ALB target group
+
+Select Instances as the target type
+
+Ensure the protocol HTTPS on secure TLS port 443
+
+Ensure that the health check path is /healthstatus
+
+Register Nginx Instances as targets
+
+Ensure that health check passes for the target group
