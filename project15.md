@@ -199,3 +199,6 @@ Ensure there is an SNS topic to send scaling notifications
 ![image](https://user-images.githubusercontent.com/49937302/124774015-0a798780-df70-11eb-9cd7-cad74f238723.png)
 
 ![image](https://user-images.githubusercontent.com/49937302/124773695-c1293800-df6f-11eb-8f2f-1c000079e23d.png)
+
+![image](https://user-images.githubusercontent.com/49937302/124777954-27638a00-df73-11eb-84ed-eb6e7972c4d4.png)
+
