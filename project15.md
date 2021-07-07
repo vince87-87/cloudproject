@@ -29,3 +29,48 @@ Setup VPC
 Setup subnet
 
 ![image](https://user-images.githubusercontent.com/49937302/124685073-1aa74d80-df03-11eb-80fe-a72fbe2b5181.png)
+
+Create internet gateway and attached to the new VPC
+
+![image](https://user-images.githubusercontent.com/49937302/124689577-53e3bb80-df0b-11eb-8a60-ab205cfb9a46.png)
+
+Create 2 route table for public and private, associate public subnet to public route table and web/db subnet to the private route table
+
+![image](https://user-images.githubusercontent.com/49937302/124689612-64943180-df0b-11eb-9757-a649d3db6627.png)
+
+![image](https://user-images.githubusercontent.com/49937302/124689678-7e357900-df0b-11eb-93b0-be92c3c56b41.png)
+
+Create Elastic ip & associate with NAT
+
+Create NAT Gateway
+
+#Create Security group for the below
+
+NGINX: allow port 80 from ALB Security group
+
+Bastion Servers: Allow port 22 from workstation public ip
+
+Ext_ALB: Allow port 80 from anywhere
+
+Int_ALB: allow port 80 from nginx
+
+Webservers: allow port 80 from int alb
+
+DB: allow 1433 from web servers
+
+EFS: allow from nginx & web servers
+
+![image](https://user-images.githubusercontent.com/49937302/124693320-cb1c4e00-df11-11eb-9464-4f055e13ad75.png)
+
+# Setup Compute Resources for nginx
+
+Provision ec2 instance using centos ami and install/update related software
+
+
+sudo yum install ntp python3 net-tools vim wget telnet epel-release-y
+
+sudo yum install htop -y
+
+sudo yum update -y
+
+![image](https://user-images.githubusercontent.com/49937302/124697638-b93ea900-df19-11eb-8dcf-d0b9c9e2c2be.png)
