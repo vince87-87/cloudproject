@@ -144,4 +144,58 @@ Ensure there is an SNS topic to send scaling notifications
 
 ![image](https://user-images.githubusercontent.com/49937302/124733823-24eb3b00-df47-11eb-942c-d3ae053c5ab4.png)
 
+# Set Up Compute Resources for Bastion
 
+# Provision the EC2 Instances for Bastion
+
+Provision bastion host via centos ami and install basic tools with user data
+
+#!/bin/bash
+
+sudo yum install ntp python3 net-tools vim wget telnet epel-release -y
+
+sudo yum install htop -y
+
+sudo yum update -y
+
+Create ami image
+
+![image](https://user-images.githubusercontent.com/49937302/124761270-33941b00-df64-11eb-84ce-996a3e98e2d4.png)
+
+# Prepare Launch Template For Bastion (One per subnet)
+
+Assign Bastion-template backup ami, tag, bastion security group & configure user data
+
+#!/bin/bash
+
+sudo yum install git ansible -y
+
+sudo yum update -y
+
+![image](https://user-images.githubusercontent.com/49937302/124762549-976b1380-df65-11eb-9d6e-fca099822fbf.png)
+
+# Configure Target group
+
+# Configure AutoScaling For Bastion
+
+Select the right launch template
+
+Select the VPC
+
+Select both public subnets
+
+Configure instance for the AutoScalingGroup (ASG)
+
+The desired capacity is 2
+
+Minimum capacity is 2
+
+Maximum capacity is 4
+
+Set scale out if CPU utilization reaches 90%
+
+Ensure there is an SNS topic to send scaling notifications
+
+![image](https://user-images.githubusercontent.com/49937302/124774015-0a798780-df70-11eb-9cd7-cad74f238723.png)
+
+![image](https://user-images.githubusercontent.com/49937302/124773695-c1293800-df6f-11eb-8f2f-1c000079e23d.png)
