@@ -113,3 +113,35 @@ Ensure that the health check path is /healthstatus
 Register Nginx Instances as targets
 
 Ensure that health check passes for the target group
+
+![image](https://user-images.githubusercontent.com/49937302/124722739-ed779100-df3c-11eb-9667-f0c75b37e68e.png)
+
+# Configure Autoscaling For Nginx
+
+Select the right launch template
+
+Select the VPC
+
+Select both public subnets
+
+Enable Application Load Balancer for the AutoScalingGroup (ASG)
+
+Select the target group you created before
+
+Ensure that you have health checks for both EC2 and ALB
+
+The desired capacity is 2
+
+Minimum capacity is 2
+
+Maximum capacity is 4
+
+Set scale out if CPU utilization reaches 90%
+
+Ensure there is an SNS topic to send scaling notifications
+
+![image](https://user-images.githubusercontent.com/49937302/124733746-11d86b00-df47-11eb-8308-35ba865fb2f9.png)
+
+![image](https://user-images.githubusercontent.com/49937302/124733823-24eb3b00-df47-11eb-942c-d3ae053c5ab4.png)
+
+
