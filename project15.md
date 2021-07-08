@@ -202,3 +202,35 @@ Ensure there is an SNS topic to send scaling notifications
 
 ![image](https://user-images.githubusercontent.com/49937302/124777954-27638a00-df73-11eb-84ed-eb6e7972c4d4.png)
 
+# Set Up Compute Resources for Webservers
+
+# Provision the EC2 Instances for Webservers
+
+Now, you will need to create 2 separate launch templates for both the WordPress and Tooling websites
+
+Create an EC2 Instance (Centos) each for WordPress and Tooling websites per Availability Zone (in the same Region).
+
+Create an AMI out of the EC2 instance
+
+![image](https://user-images.githubusercontent.com/49937302/124871512-b5cd1f80-dff6-11eb-8d0b-ab9f58b59832.png)
+
+# Configure launch template for web servers
+
+Assign Bastion-template backup ami, tag, bastion security group & configure user data
+
+Configure Userdata to update yum package repository and install wordpress (Only required on the WordPress launch template)
+
+![image](https://user-images.githubusercontent.com/49937302/124871992-4efc3600-dff7-11eb-8755-d3c03a69a49b.png)
+
+# TLS Certificates From Amazon Certificate Manager (ACM)
+
+Navigate to AWS ACM
+
+Request a public wildcard certificate for the domain name you register
+
+Use DNS to validate the domain name
+
+Tag the resource
+
+![image](https://user-images.githubusercontent.com/49937302/124871289-71418400-dff6-11eb-8f1d-642a491947b2.png)
+
