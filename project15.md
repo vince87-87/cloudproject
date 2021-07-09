@@ -296,7 +296,7 @@ https://docs.aws.amazon.com/efs/latest/ug/installing-amazon-efs-utils.html#insta
 
 **Note: The amazon-efs-utils package comes with Amazon Linux and Amazon Linux AMIS, and is available for installation on EC2 instances running these AMIs.
 
-Blocker:
+# Blocker:
 
 If encounter the below error:
 
