@@ -330,6 +330,22 @@ Pre-requisite: Create a KMS key from Key Management Service (KMS) to be used to 
 
 ![image](https://user-images.githubusercontent.com/49937302/125041371-4412d580-e0cb-11eb-9474-782f6df19e72.png)
 
+Create a subnet group and add 2 private subnets (data Layer)
 
+Create an RDS Instance for mysql 8.*.*
+
+To satisfy our architectural diagram, you will need to select either Dev/Test or Production Sample Template. But to minimize AWS cost, you can select the Do not create a standby instance option under Availability & durability sample template (The production template will enable Multi-AZ deployment)
+
+Configure other settings accordingly (For test purposes, most of the default settings are good to go). In the real world, you will need to size the database appropriately. You will need to get some information about the usage. If it is a highly transactional database that grows at 10GB weekly, you must bear that in mind while configuring the initial storage allocation, storage autoscaling, and maximum storage threshold.
+
+Configure VPC and security (ensure the database is not available from the Internet)
+
+Configure backups and retention
+
+Encrypt the database using the KMS key created earlier
+
+Enable CloudWatch monitoring and export Error and Slow Query logs (for production, also include Audit)
+
+![image](https://user-images.githubusercontent.com/49937302/125076526-9c110280-e0f2-11eb-8df6-2705131d8385.png)
 
 
