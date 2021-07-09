@@ -324,3 +324,12 @@ fs-41259001.efs.ap-southeast-1.amazonaws.com:/ /mnt/wp efs _netdev,tls,accesspoi
 
 ![image](https://user-images.githubusercontent.com/49937302/125033782-56d4dc80-e0c2-11eb-87fa-cc3bb6113bec.png)
 
+# Setup RDS
+
+Pre-requisite: Create a KMS key from Key Management Service (KMS) to be used to encrypt the database instance.
+
+![image](https://user-images.githubusercontent.com/49937302/125041371-4412d580-e0cb-11eb-9474-782f6df19e72.png)
+
+
+
+
