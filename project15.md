@@ -348,4 +348,8 @@ Enable CloudWatch monitoring and export Error and Slow Query logs (for productio
 
 ![image](https://user-images.githubusercontent.com/49937302/125076526-9c110280-e0f2-11eb-8df6-2705131d8385.png)
 
+Verify connection to db is working
+
+![image](https://user-images.githubusercontent.com/49937302/125077110-4d179d00-e0f3-11eb-955f-abd5704f56ae.png)
+
 
