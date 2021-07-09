@@ -38,11 +38,19 @@ Create 2 route table for public and private, associate public subnet to public r
 
 ![image](https://user-images.githubusercontent.com/49937302/124689612-64943180-df0b-11eb-9757-a649d3db6627.png)
 
+![image](https://user-images.githubusercontent.com/49937302/125006691-4c4e1f00-e091-11eb-9a76-f857c398ef92.png)
+
 ![image](https://user-images.githubusercontent.com/49937302/124689678-7e357900-df0b-11eb-93b0-be92c3c56b41.png)
+
+![image](https://user-images.githubusercontent.com/49937302/125006633-26c11580-e091-11eb-97ec-51a6253a6842.png)
 
 Create Elastic ip & associate with NAT
 
+![image](https://user-images.githubusercontent.com/49937302/125006472-ccc05000-e090-11eb-9ac2-1d87331783ae.png)
+
 Create NAT Gateway
+
+![image](https://user-images.githubusercontent.com/49937302/125006415-a7cbdd00-e090-11eb-93b9-43ee1a37a810.png)
 
 #Create Security group for the below
 
@@ -232,5 +240,35 @@ Use DNS to validate the domain name
 
 Tag the resource
 
-![image](https://user-images.githubusercontent.com/49937302/124871289-71418400-dff6-11eb-8f1d-642a491947b2.png)
+![image](https://user-images.githubusercontent.com/49937302/124873533-2d03b300-dff9-11eb-8bcb-9f0b59db4725.png)
+
+# Configure Application Load Balancer (ALB)
+
+# Application Load Balancer To Route Traffic To NGINX
+
+Create an Internal ALB
+
+Ensure that it listens on HTTPS protocol (TCP port 443)
+
+Ensure the ALB is created within the appropriate VPC | AZ | Subnets
+
+Choose the Certificate from ACM
+
+Select Security Group
+
+Select webserver Instances as the target group
+
+Ensure that health check passes for the target group
+
+# Setup EFS
+
+Create an EFS filesystem
+
+Create an EFS mount target per AZ in the VPC, associate it with both subnets dedicated for data layer
+
+Associate the Security groups created earlier for data layer.
+
+Create an EFS access point. (Give it a name and leave all other settings as default)
+
+![image](https://user-images.githubusercontent.com/49937302/125006857-a7801180-e091-11eb-9881-73cc2ec16a2d.png)
 
