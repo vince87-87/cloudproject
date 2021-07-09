@@ -272,6 +272,8 @@ Create an EFS access point. (Give it a name and leave all other settings as defa
 
 ![image](https://user-images.githubusercontent.com/49937302/125006857-a7801180-e091-11eb-9881-73cc2ec16a2d.png)
 
+![image](https://user-images.githubusercontent.com/49937302/125033610-1b3a1280-e0c2-11eb-9ac4-17740f1fbe37.png)
+
 # Configure EFS on web servers
 
 # Install EFS Client
@@ -309,3 +311,16 @@ set from true to false
 stunnel_check_cert_hostname = false
 
 ![image](https://user-images.githubusercontent.com/49937302/125018016-d48aef00-e0a6-11eb-87ff-79bb3ad6b700.png)
+
+# mount the access point
+
+sudo mount -t efs -o tls,accesspoint=fsap-0cb6dac604b88ba52 fs-41259001 /mnt/wp
+
+sudo mount -t efs -o tls,accesspoint=fsap-0ebf720bab933381e fs-41259001 /mnt/lb
+
+sudo vi /etc/fstab
+
+fs-41259001.efs.ap-southeast-1.amazonaws.com:/ /mnt/wp efs _netdev,tls,accesspoint=fsap-0cb6dac604b88ba52 0 0
+
+![image](https://user-images.githubusercontent.com/49937302/125033782-56d4dc80-e0c2-11eb-87fa-cc3bb6113bec.png)
+
