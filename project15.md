@@ -272,3 +272,40 @@ Create an EFS access point. (Give it a name and leave all other settings as defa
 
 ![image](https://user-images.githubusercontent.com/49937302/125006857-a7801180-e091-11eb-9881-73cc2ec16a2d.png)
 
+# Configure EFS on web servers
+
+# Install EFS Client
+
+yum -y install git
+
+git clone https://github.com/aws/efs-utils
+
+cd efs-utils
+
+yum -y install rpm-build
+
+yum -y install make
+
+yum -y install rpm-build
+
+make rpm
+
+yum -y install ./build/amazon-efs-utils*rpm
+
+https://docs.aws.amazon.com/efs/latest/ug/installing-amazon-efs-utils.html#installing-other-distro
+
+**Note: The amazon-efs-utils package comes with Amazon Linux and Amazon Linux AMIS, and is available for installation on EC2 instances running these AMIs.
+
+Blocker:
+
+If encounter the below error:
+
+![image](https://user-images.githubusercontent.com/49937302/125017661-2f701680-e0a6-11eb-8d4d-0fc7ac9adfde.png)
+
+vi /etc/amazon/efs/efs-utils.conf
+
+set from true to false
+
+stunnel_check_cert_hostname = false
+
+![image](https://user-images.githubusercontent.com/49937302/125018016-d48aef00-e0a6-11eb-87ff-79bb3ad6b700.png)
