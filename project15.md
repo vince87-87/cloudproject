@@ -272,7 +272,7 @@ Create an EFS access point. (Give it a name and leave all other settings as defa
 
 ![image](https://user-images.githubusercontent.com/49937302/125006857-a7801180-e091-11eb-9881-73cc2ec16a2d.png)
 
-![image](https://user-images.githubusercontent.com/49937302/125033610-1b3a1280-e0c2-11eb-9ac4-17740f1fbe37.png)
+![image](https://user-images.githubusercontent.com/49937302/125148889-04e69200-e168-11eb-8fb5-14c098f2f1d0.png)
 
 # Configure EFS on web servers
 
