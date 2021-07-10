@@ -352,4 +352,10 @@ Verify connection to db is working
 
 ![image](https://user-images.githubusercontent.com/49937302/125077110-4d179d00-e0f3-11eb-955f-abd5704f56ae.png)
 
+Configure alias record for route 53 and point to alb
 
+![image](https://user-images.githubusercontent.com/49937302/125148816-7f62e200-e167-11eb-9163-78b0dbd67c6a.png)
+
+Verify wordpress can bee accessible
+
+![image](https://user-images.githubusercontent.com/49937302/125148795-580c1500-e167-11eb-943d-675e3389f7f8.png)
