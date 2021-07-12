@@ -64,7 +64,7 @@ Int_ALB: allow port 80 from nginx
 
 Webservers: allow port 80 from int alb
 
-DB: allow 1433 from web servers
+DB: allow 3306 from web servers
 
 EFS: allow from nginx & web servers
 
