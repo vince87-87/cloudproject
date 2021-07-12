@@ -348,14 +348,22 @@ Enable CloudWatch monitoring and export Error and Slow Query logs (for productio
 
 ![image](https://user-images.githubusercontent.com/49937302/125076526-9c110280-e0f2-11eb-8df6-2705131d8385.png)
 
+configure config to point it rds dns
+
+![image](https://user-images.githubusercontent.com/49937302/125299960-30ca6900-e35c-11eb-99f4-4d658f321034.png)
+
 Verify connection to db is working
 
-![image](https://user-images.githubusercontent.com/49937302/125077110-4d179d00-e0f3-11eb-955f-abd5704f56ae.png)
+![image](https://user-images.githubusercontent.com/49937302/125299264-9407cb80-e35b-11eb-907b-8d01ae0a9d27.png)
+
+Configure external alb and internal alb
+
+![image](https://user-images.githubusercontent.com/49937302/125299417-b699e480-e35b-11eb-9546-65d2a3e66875.png)
 
 Configure alias record for route 53 and point to alb
 
-![image](https://user-images.githubusercontent.com/49937302/125148816-7f62e200-e167-11eb-9163-78b0dbd67c6a.png)
+![image](https://user-images.githubusercontent.com/49937302/125299597-df21de80-e35b-11eb-83d9-6a6f7e2aa6dd.png)
 
-Verify wordpress can bee accessible
+Verify wordpress can be accessible
 
-![image](https://user-images.githubusercontent.com/49937302/125148795-580c1500-e167-11eb-943d-675e3389f7f8.png)
+![image](https://user-images.githubusercontent.com/49937302/125299711-fa8ce980-e35b-11eb-8d2c-4889fbc7adbc.png)
