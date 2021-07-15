@@ -366,4 +366,4 @@ Configure alias record for route 53 and point to alb
 
 Verify wordpress can be accessible
 
-![image](https://user-images.githubusercontent.com/49937302/125299711-fa8ce980-e35b-11eb-8d2c-4889fbc7adbc.png)
+![image](https://user-images.githubusercontent.com/49937302/125719884-d81d1ba0-c17f-41ab-8d3d-3c68ef4d45b3.png)
