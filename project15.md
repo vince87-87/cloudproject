@@ -362,8 +362,8 @@ Configure external alb and internal alb
 
 Configure alias record for route 53 and point to alb
 
-![image](https://user-images.githubusercontent.com/49937302/125299597-df21de80-e35b-11eb-83d9-6a6f7e2aa6dd.png)
+![image](https://user-images.githubusercontent.com/49937302/125725111-68d482b8-f793-482d-8b03-ce896b3dad2a.png)
 
 Verify wordpress can be accessible
 
-![image](https://user-images.githubusercontent.com/49937302/125719884-d81d1ba0-c17f-41ab-8d3d-3c68ef4d45b3.png)
+![image](https://user-images.githubusercontent.com/49937302/125725048-df94d2e2-b7d7-4d1b-ab0b-bd6c0605213c.png)
