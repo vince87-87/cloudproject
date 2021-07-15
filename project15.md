@@ -367,3 +367,15 @@ Configure alias record for route 53 and point to alb
 Verify wordpress can be accessible
 
 ![image](https://user-images.githubusercontent.com/49937302/125725048-df94d2e2-b7d7-4d1b-ab0b-bd6c0605213c.png)
+
+Blocker:
+Prerequsite to use ssl:
+install ssl plugin on wordpress
+
+![image](https://user-images.githubusercontent.com/49937302/125790867-81f8e4a1-c1b4-4dd9-95bc-4a1fa944f8d1.png)
+
+Ensure using the correct cert on the internal load balancer
+
+![image](https://user-images.githubusercontent.com/49937302/125791056-c9331617-a7c2-49cf-83e5-8554a8e7dda7.png)
+
+
