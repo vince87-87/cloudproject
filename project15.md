@@ -362,11 +362,14 @@ Configure external alb and internal alb
 
 Configure alias record for route 53 and point to alb
 
-![image](https://user-images.githubusercontent.com/49937302/125725111-68d482b8-f793-482d-8b03-ce896b3dad2a.png)
+![image](https://user-images.githubusercontent.com/49937302/126072425-6c7ab6ff-6a0a-482f-9657-bdac0a321dc6.png)
 
-Verify wordpress can be accessible
+Verify wordpress & toolings can be accessible
 
 ![image](https://user-images.githubusercontent.com/49937302/125725048-df94d2e2-b7d7-4d1b-ab0b-bd6c0605213c.png)
+
+![image](https://user-images.githubusercontent.com/49937302/126072341-7d5ae3c7-224a-4fe6-858d-058d79c6e6ab.png)
+
 
 Blocker:
 Prerequsite to use ssl:
@@ -376,6 +379,18 @@ install ssl plugin on wordpress
 
 Ensure using the correct cert on the internal load balancer
 
-![image](https://user-images.githubusercontent.com/49937302/125791056-c9331617-a7c2-49cf-83e5-8554a8e7dda7.png)
+![image](https://user-images.githubusercontent.com/49937302/126072411-2f7c80de-830a-4678-a17b-8f3cf3de8343.png)
+
+Ensure Nginx is configure to the below
+
+#this is to pass the host header to pass it to the host variable and forward it to the load balancer, without it it will just pass it to the load balancer and goes to default rules
+proxy_set_header Host $host 
+
+#this is to forward it to the load balancer
+proxy_pass https://internal-ALB-WEB-1645236889.ap-southeast-1.elb.amazonaws.com/;
+
+
+![image](https://user-images.githubusercontent.com/49937302/126072221-eeab5ff1-b2d8-4f67-a397-7d86074a5936.png)
+
 
 
