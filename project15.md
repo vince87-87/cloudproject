@@ -58,9 +58,9 @@ NGINX: allow port 80 from ALB Security group
 
 Bastion Servers: Allow port 22 from workstation public ip
 
-Ext_ALB: Allow port 80 from anywhere
+Ext_ALB: Allow port 443 from anywhere
 
-Int_ALB: allow port 80 from nginx
+Int_ALB: allow port 443 from nginx
 
 Webservers: allow port 80 from int alb
 
