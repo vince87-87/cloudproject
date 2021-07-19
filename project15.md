@@ -110,13 +110,11 @@ Launch NGINX from template from each zone
 
 ![image](https://user-images.githubusercontent.com/49937302/124706032-3aea0300-df29-11eb-8b1b-d75c0d77b42b.png)
 
-# Configure ALB target group
+# Configure ALB target group for nginx
 
 Select Instances as the target type
 
 Ensure the protocol HTTPS on secure TLS port 443
-
-Ensure that the health check path is /healthstatus
 
 Register Nginx Instances as targets
 
@@ -182,8 +180,6 @@ sudo yum update -y
 
 ![image](https://user-images.githubusercontent.com/49937302/124762549-976b1380-df65-11eb-9d6e-fca099822fbf.png)
 
-# Configure Target group
-
 # Configure AutoScaling For Bastion
 
 Select the right launch template
@@ -222,11 +218,15 @@ Create an AMI out of the EC2 instance
 
 ![image](https://user-images.githubusercontent.com/49937302/124871512-b5cd1f80-dff6-11eb-8d0b-ab9f58b59832.png)
 
-# Configure launch template for web servers
+# Configure launch template for web servers - toolings & wordpress
 
-Assign Bastion-template backup ami, tag, bastion security group & configure user data
+Assign wordpress-template backup ami, tag, bastion security group & configure user data
 
 Configure Userdata to update yum package repository and install wordpress (Only required on the WordPress launch template)
+
+Assign tooling-template backup ami, tag, bastion security group & configure user data
+
+Configure Userdata to update yum package repository and git clone tooling repo to the servers
 
 ![image](https://user-images.githubusercontent.com/49937302/124871992-4efc3600-dff7-11eb-8755-d3c03a69a49b.png)
 
@@ -240,13 +240,30 @@ Use DNS to validate the domain name
 
 Tag the resource
 
-![image](https://user-images.githubusercontent.com/49937302/124873533-2d03b300-dff9-11eb-8bcb-9f0b59db4725.png)
+![image](https://user-images.githubusercontent.com/49937302/126160126-dffd71f4-6789-4a55-80bf-53f0fa56a69c.png)
 
-# Configure Application Load Balancer (ALB)
+# Provision toolings and wordpress instance from the launch template
+
+# Configure ALB target group for toolings and wordpress
+
+Configure 2 target group: one for toolings and one for wordpress
+
+Select Instances as the target type
+
+Ensure the protocol HTTPS on secure TLS port 443
+
+Register wordpress and toolings Instances respectively to each target group
+
+Ensure that health check passes for the target group
+
+![image](https://user-images.githubusercontent.com/49937302/126161669-edc2a0b9-4a15-4b95-aab2-64bc90759ea9.png)
+
+
+# Configure external Application Load Balancer (ALB)
 
 # Application Load Balancer To Route Traffic To NGINX
 
-Create an Internal ALB
+Create an External ALB
 
 Ensure that it listens on HTTPS protocol (TCP port 443)
 
@@ -259,6 +276,27 @@ Select Security Group
 Select webserver Instances as the target group
 
 Ensure that health check passes for the target group
+
+# Configure internal Application Load Balancer (ALB)
+
+# Application Load Balancer To Route Traffic To wordpress and toolings
+
+Create an internal ALB
+
+Ensure that it listens on HTTPS protocol (TCP port 443)
+
+Ensure the ALB is created within the appropriate VPC | AZ | Subnets
+
+Choose the Certificate from ACM
+
+Select Security Group
+
+Select wordpress target group as the default target group & configure hosts: toolings.mycloudslab.com to route toolings target group
+
+Ensure that health check passes for both wordpress and toolings target group
+
+![image](https://user-images.githubusercontent.com/49937302/126160766-a2379f7f-d572-4599-aaf9-5a0921b63ea5.png)
+
 
 # Setup EFS
 
