@@ -310,7 +310,7 @@ Create an EFS access point. (Give it a name and leave all other settings as defa
 
 ![image](https://user-images.githubusercontent.com/49937302/125006857-a7801180-e091-11eb-9881-73cc2ec16a2d.png)
 
-![image](https://user-images.githubusercontent.com/49937302/125148889-04e69200-e168-11eb-8fb5-14c098f2f1d0.png)
+![image](https://user-images.githubusercontent.com/49937302/126162276-d1cd772e-dd0d-4b22-8f1d-15daa8880ad7.png)
 
 # Configure EFS on web servers
 
@@ -352,13 +352,15 @@ stunnel_check_cert_hostname = false
 
 # mount the access point
 
-sudo mount -t efs -o tls,accesspoint=fsap-0cb6dac604b88ba52 fs-41259001 /mnt/wp
+sudo mount -t efs -o tls,accesspoint=fsap-0119e984007e2c3bc fs-41259001 /var/www/html
 
-sudo mount -t efs -o tls,accesspoint=fsap-0ebf720bab933381e fs-41259001 /mnt/lb
+sudo mount -t efs -o tls,accesspoint=fsap-03f2bce41a8c11d96 fs-41259001 /var/www/html
 
 sudo vi /etc/fstab
 
-fs-41259001.efs.ap-southeast-1.amazonaws.com:/ /mnt/wp efs _netdev,tls,accesspoint=fsap-0cb6dac604b88ba52 0 0
+fs-41259001.efs.ap-southeast-1.amazonaws.com:/ /var/www/html efs _netdev,tls,accesspoint=fsap-0119e984007e2c3bc 0 0
+
+fs-41259001.efs.ap-southeast-1.amazonaws.com:/ /var/www/html efs _netdev,tls,accesspoint=fsap-03f2bce41a8c11d96 0 0
 
 ![image](https://user-images.githubusercontent.com/49937302/125033782-56d4dc80-e0c2-11eb-87fa-cc3bb6113bec.png)
 
