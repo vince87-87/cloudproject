@@ -398,11 +398,11 @@ Verify connection to db is working
 
 Configure external alb and internal alb
 
-![image](https://user-images.githubusercontent.com/49937302/125299417-b699e480-e35b-11eb-9546-65d2a3e66875.png)
+![image](https://user-images.githubusercontent.com/49937302/126245645-a5447d02-1fd6-4f28-bc02-33f450d46154.png)
 
-Configure alias record for route 53 and point to alb
+Configure alias record for route 53 and point to external alb
 
-![image](https://user-images.githubusercontent.com/49937302/126072425-6c7ab6ff-6a0a-482f-9657-bdac0a321dc6.png)
+![image](https://user-images.githubusercontent.com/49937302/126245599-e2386978-b2c0-4f57-af02-e3f2979576da.png)
 
 Verify wordpress & toolings can be accessible
 
@@ -424,9 +424,11 @@ Ensure using the correct cert on the internal load balancer
 Ensure Nginx is configure to the below
 
 #this is to pass the host header to pass it to the host variable and forward it to the load balancer, without it it will just pass it to the load balancer and goes to default rules
+
 proxy_set_header Host $host 
 
 #this is to forward it to the load balancer
+
 proxy_pass https://internal-ALB-WEB-1645236889.ap-southeast-1.elb.amazonaws.com/;
 
 
